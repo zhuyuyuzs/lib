@@ -14,7 +14,7 @@ int main() {
         cout << "3. 显示物品库" << endl;
         cout << "4. 编辑物品" << endl;
         cout << "5. 删除物品" << endl;
-        cout << "6. 退出" << endl;
+        cout << "6. 保存并退出" << endl;
 
         cout << "请输入操作编号（1-6）：";
         cin >> choice;
