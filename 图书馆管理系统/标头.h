@@ -28,6 +28,7 @@ struct DVD {
 vector<Book> books;
 vector<DVD> dvds;
 
+// 统一读取数据
 void load_data(const string& filename) {
     ifstream file(filename);
     string line;
@@ -64,26 +65,26 @@ void load_data(const string& filename) {
     }
 }
 
+// 统一保存数据
 void save_data(const string& filename) {
     ofstream file(filename);
 
     if (file.is_open()) {
-        // 保存图书数据
+        // 保存图书数据，按照原格式进行输出
         for (const auto& book : books) {
-            file << "图书|编号|" << book.id << "|标题|" << book.title << "|作者|" << book.author
-                << "|出版社|" << book.publisher << "|ISBN|" << book.isbn << "|页数|" << book.pages << endl;
+            file << "图书|" << book.id << "|" << book.title << "|" << book.author
+                << "|" << book.publisher << "|" << book.isbn << "|" << book.pages << endl;
         }
 
-        // 保存光盘数据
+        // 保存光盘数据，按照原格式进行输出
         for (const auto& dvd : dvds) {
-            file << "光盘|编号|" << dvd.id << "|标题|" << dvd.title << "|作者|" << dvd.author
-                << "|出品者|" << dvd.producer << "|出品年份|" << dvd.year << "|视频时长|" << dvd.duration << endl;
+            file << "光盘|" << dvd.id << "|" << dvd.title << "|" << dvd.author
+                << "|" << dvd.producer << "|" << dvd.year << "|" << dvd.duration << endl;
         }
 
         file.close();
     }
 }
-
 
 void add_item() {
     int type;
